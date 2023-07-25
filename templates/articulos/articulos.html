@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+  <center>
+    {% for i in articulos %}
+      <br>
+        <ul style="list-style-type:none;">
+          <li>
+            <h4><strong>{{ i.titulo }}</strong></h4>
+          </li>
+        <li>{{ i.subtitulo }}</li>
+        <li>{{ i.contenido }}</li>
+        <li>{{ i.categoria }}</li>
+        <img src="{{ i.imagen.url }}" width="50%">
+        </ul>
+      <br>
+    {% empty %}
+        <h1>No hay articulos publicados</h1>
+    {% endfor %}
+  </center>
+
+
+
+{% endblock %}
+  
